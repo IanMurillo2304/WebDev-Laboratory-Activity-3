@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #626F47; /* Dark olive for text */
+    background-color: #FEFAE0; /* Light cream background */
+}
+
+header {
+    background-color: #798645; /* Olive green */
+    color: #FEFAE0; /* Light cream for text contrast */
+    padding: 30px 0; /* Increased padding for more space */
+    text-align: center;
+    position: relative; /* Position for absolute elements */
+    overflow: hidden; /* To contain floated elements */
+}
+
+header h1 {
+    font-size: 2.5em; /* Larger font size for the main title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+header p {
+    font-size: 1.3em; /* Slightly larger subtitle */
+    margin-top: 10px;
+}
+
+nav {
+    margin-top: 15px; /* Space above the nav */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Increased gap between links */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FEFAE0; /* Light cream for text */
+    font-size: 1.2rem; /* Increased font size */
+    padding: 10px 20px; /* More padding for buttons */
+    border-radius: 5px;
+    background-color: #626F47; /* Dark olive */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+nav ul li a:hover {
+    background-color: #FEFAE0; /* Light cream on hover */
+    color: #626F47; /* Dark olive for text on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('header-background.jpg'); /* Example background image */
+    background-size: cover;
+    opacity: 0.3; /* Slightly transparent for text visibility */
+    z-index: 0; /* Behind other elements */
+}
+
+header h1, header p, nav {
+    position: relative; /* Bring text and nav above the background */
+    z-index: 1; /* Ensure they are above the background image */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #F2EED7; /* Soft beige for main content background */
+}
+
+.post {
+    background-color: #FEFAE0; /* Light cream background */
+    width: 80%; /* Set width to 80% of the screen */
+    max-width: 600px; /* Set a maximum width to keep it from expanding too much */
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.post h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.post .date {
+    color: #626F47; /* Darker olive for dates */
+    font-size: 0.9em;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #626F47; /* Dark olive for link text */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #626F47;
+}
+
+.read-more:hover {
+    color: #798645; /* Olive green on hover */
+    border-color: #798645;
+}
+
+footer {
+    background-color: #798645; /* Olive green */
+    color: #FEFAE0; /* Light cream text */
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #626F47;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #626F47;
+}
+
+.back-link:hover {
+    color: #798645;
+    border-color: #798645;
+}
+
+.brand-deals {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.brand-deals img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    padding: 10px;
+    border: 1px solid #798645; /* Olive green border */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.brand-deals td {
+    padding: 10px;
+}
+
+.brand-deals a {
+    color: #626F47; /* Dark olive green for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.brand-deals a:hover {
+    text-decoration: underline;
+    color: #798645; /* Olive green on hover */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1; /* Ensures images are square */
+    object-fit: cover; /* Crops the image to fit */
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555; /* Slightly darker gray for better readability */
+    padding: 5px 0;
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
+
+.profile-picture {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.info {
+    max-width: 500px; /* Limit the width of the text */
+}
+
+h2 {
+    margin: 0 0 10px 0; /* Space below heading */
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.schools {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+.school-images {
+    display: flex;
+    justify-content: space-around; /* Evenly distribute items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between images */
+}
+
+.school {
+    text-align: center; /* Center the text under each image */
+    max-width: 150px; /* Limit width of each school item */
+}
+
+.school img {
+    width: 100%; /* Make images responsive */
+    height: auto;
+    border-radius: 5px; /* Slight rounding of corners */
+}
+
+.skills {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+.skills table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse; /* Remove space between table cells */
+    max-width: 600px; /* Limit table width */
+}
+
+.skills th, .skills td {
+    padding: 10px;
+    border: 1px solid #626F47; /* Dark olive green for borders */
+}
+
+.skills th {
+    background-color: #798645; /* Olive green */
+    color: #FEFAE0; /* Light cream for text */
+}
+
+.skills tr:nth-child(even) {
+    background-color: #F2EED7; /* Soft beige for alternate rows */
+}
+
+.skills tr:hover {
+    background-color: #d1d1d1; /* Light gray on hover */
+}
+
+.contact {
+    background-color: #FEFAE0; /* Light cream background */
+    width: 80%; /* Set width to 80% of the screen */
+    max-width: 600px; /* Set a maximum width to keep it from expanding too much */
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
